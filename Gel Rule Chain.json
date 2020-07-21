@@ -1,0 +1,265 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "gel",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": true,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 1,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1107,
+          "layoutY": 334
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "ckechRPC",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "if (msgType) {\n    return true;\n} else {\n    return false;\n}"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 306,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode",
+        "name": "distribuir por tipo",
+        "debugMode": false,
+        "configuration": {
+          "version": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 443,
+          "layoutY": 394
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "estadoPersonaDetectada",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    \n    let juanp = metadata.deviceName === 'Juan';\n    let juanv = metadata.deviceName === 'Juanv';\n    let nacho = metadata.deviceName === 'Nacho';\n    let victoria = metadata.deviceName === 'Victoria';\n    let agustin = metadata.deviceName === 'Agustin';\n    \n    if (juanp || juanv || nacho || victoria || agustin) {\n        \n        if (typeof msg.personaDetectada != 'undefined') {\n            if (msg.personaDetectada) {\n                return'detectada';\n            }\n        }\n        \n        if (typeof msg.prenderLed != 'undefined') {\n            const maxGel = 10;\n            \n            if (msg.prenderLed == maxGel) {\n                return 'otro';\n            }\n            if (msg.prenderLed == 0) {\n                return 'recarga';\n            }\n            return'prenderLed';\n        }\n        \n        if (typeof msg.alcoholDispensado != 'undefined') {\n            if (msg.alcoholDispensado) {\n                return'alcoholDispensado';\n            }\n        }\n    }\n    return['otro'];\n}"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 713,
+          "layoutY": 604
+        },
+        "type": "org.thingsboard.rule.engine.action.TbLogNode",
+        "name": "logError",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return 'Incoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1371,
+          "layoutY": 333
+        },
+        "type": "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode",
+        "name": "mandarAlDispositivo",
+        "debugMode": false,
+        "configuration": {
+          "timeoutInSeconds": 60
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 763,
+          "layoutY": 334
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "mensajeAlDispositivo",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "var newMsg = {};\nnewMsg.method = \"personaDetectada\";\nnewMsg.params = true;\n//metadata.deviceName = 'Juan';\nmsgType = 'RPC message';\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 169,
+          "layoutY": 395
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode",
+        "name": "CambiarOriginador",
+        "debugMode": false,
+        "configuration": {
+          "originatorSource": "RELATED",
+          "relationsQuery": {
+            "fetchLastLevelOnly": false,
+            "direction": "TO",
+            "maxLevel": 1,
+            "filters": []
+          }
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 763,
+          "layoutY": 228
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "prenderLed",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "const maxGel = 10;\nlet ret = 'verde';\n\nif (msg.prenderLed < 3) {\n    ret = \"rojo\";\n  } else {\n    if (msg.prenderLed < 6) {\n      ret = \"amarillo\";\n    } \n  }\n  \nvar newMsg = {};\nnewMsg.method = \"prenderLed\";\nnewMsg.params = ret;\nmetadata.deviceName = 'Juanv';\nmsgType = 'RPC message';\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 775,
+          "layoutY": 125
+        },
+        "type": "org.thingsboard.rule.engine.mail.TbMsgToEmailNode",
+        "name": "Prueba",
+        "debugMode": true,
+        "configuration": {
+          "fromTemplate": "maquinadegel@agurodriguez.net",
+          "toTemplate": "maquinadegel@agurodriguez.net,juanprina95@hotmail.com",
+          "ccTemplate": null,
+          "bccTemplate": null,
+          "subjectTemplate": "Device ${deviceType} temperature high",
+          "bodyTemplate": "Poco alcohol"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1133,
+          "layoutY": 129
+        },
+        "type": "org.thingsboard.rule.engine.mail.TbSendEmailNode",
+        "name": "enviar",
+        "debugMode": true,
+        "configuration": {
+          "useSystemSmtpSettings": false,
+          "smtpProtocol": "smtps",
+          "smtpHost": "mail.agurodriguez.net",
+          "smtpPort": 587,
+          "timeout": 10000,
+          "enableTls": true,
+          "tlsVersion": "TLSv1.2",
+          "enableProxy": false,
+          "proxyHost": null,
+          "proxyPort": null,
+          "proxyUser": null,
+          "proxyPassword": null,
+          "username": "maquinadegel@agurodriguez.net",
+          "password": "quelocoestedesinfectante"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 166,
+          "layoutY": 276
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "GuardarMsj",
+        "debugMode": false,
+        "configuration": {
+          "defaultTTL": 0
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 808,
+          "layoutY": 494
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "alcoholDispensado",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "var newMsg = {};\nnewMsg.method = \"alcoholDispensado\";\nnewMsg.params = true;\nmetadata.deviceName = 'Nacho';\nmsgType = 'RPC message';\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "type": "True"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 10,
+        "type": "Post telemetry"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 11,
+        "type": "alcoholDispensado"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 5,
+        "type": "detectada"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "otro"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 7,
+        "type": "prenderLed"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 8,
+        "type": "recarga"
+      },
+      {
+        "fromIndex": 5,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 8,
+        "toIndex": 9,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 6,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 0,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
