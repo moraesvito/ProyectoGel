@@ -1,0 +1,574 @@
+{
+  "title": "Juan",
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "a26c4e37-abbd-dc02-d295-2562e0fd60df": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "Timeseries table",
+        "sizeX": 16,
+        "sizeY": 13,
+        "row": 0,
+        "col": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "entityAliasId": "61b84620-8889-f9ae-e21e-d644351b0a08",
+              "dataKeys": [
+                {
+                  "name": "personaDetectada",
+                  "label": "personaDetectada",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9724122994251179
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 60000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Persona Detectada Agustin",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "id": "a26c4e37-abbd-dc02-d295-2562e0fd60df"
+      },
+      "2b0ed596-bb05-df9f-6f08-fb6843d7e333": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "Timeseries table",
+        "sizeX": 16,
+        "sizeY": 13,
+        "row": 0,
+        "col": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "entityAliasId": "188159e3-f9ab-1ddf-53fa-d97c82422621",
+              "dataKeys": [
+                {
+                  "name": "personaDetectada",
+                  "label": "personaDetectada",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.05930225684271773
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 60000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Persona Detectada Victoria",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "id": "2b0ed596-bb05-df9f-6f08-fb6843d7e333"
+      },
+      "56b5af30-5013-b093-055c-b82d8216b3c8": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "Simple card",
+        "sizeX": 10,
+        "sizeY": 6,
+        "row": 0,
+        "col": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "entityAliasId": "61b84620-8889-f9ae-e21e-d644351b0a08",
+              "dataKeys": [
+                {
+                  "name": "personaDetectada",
+                  "label": "personaDetectada",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.089334438030225
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#ff5722",
+          "color": "rgba(255, 255, 255, 0.87)",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "Simple card",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {}
+        },
+        "id": "56b5af30-5013-b093-055c-b82d8216b3c8"
+      },
+      "12c9e477-b10b-5c48-0d05-c2e0efbaa16b": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "Timeseries table",
+        "sizeX": 16,
+        "sizeY": 13,
+        "row": 0,
+        "col": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "entityAliasId": "7a067223-dc83-7be8-0101-c8d68c5a8f1a",
+              "dataKeys": [
+                {
+                  "name": "alcoholDispensado",
+                  "label": "alcoholDispensado",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8250488390525537
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 60000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Fin Nacho",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "id": "12c9e477-b10b-5c48-0d05-c2e0efbaa16b"
+      },
+      "df57fb8d-857a-a365-fb6d-8fa28586a1bc": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "digital_bar",
+        "type": "latest",
+        "title": "Digital horizontal bar",
+        "sizeX": 12,
+        "sizeY": 5,
+        "row": 0,
+        "col": 4,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "entityAliasId": "91cdbb7b-5dcb-6fa3-8c07-74e0befed8bd",
+              "dataKeys": [
+                {
+                  "name": "prenderLed",
+                  "label": "prenderLed",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.17986552797554878
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#000000",
+          "color": "rgba(255, 254, 254, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 10,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": true,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [
+              "#008000",
+              "#fbc02d",
+              "#f44336"
+            ],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueFont": {
+              "family": "Segment7Standard",
+              "style": "normal",
+              "weight": "500",
+              "size": 18
+            },
+            "minMaxFont": {
+              "family": "Segment7Standard",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#ffffff"
+            },
+            "neonGlowBrightness": 40,
+            "dashThickness": 1.5,
+            "showUnitTitle": true,
+            "gaugeColor": "#171a1c",
+            "gaugeType": "horizontalBar",
+            "showTitle": false,
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "unitTitle": "DESCARGAS RESTANTES"
+          },
+          "title": "Digital horizontal bar",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {},
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {}
+        },
+        "id": "df57fb8d-857a-a365-fb6d-8fa28586a1bc"
+      },
+      "725db056-a27e-6fd6-0006-a50ee05a5333": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "timeseries_table",
+        "type": "timeseries",
+        "title": "Timeseries table",
+        "sizeX": 16,
+        "sizeY": 13,
+        "row": 0,
+        "col": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "entityAliasId": "ca9e36e0-b27a-807c-208f-9218ee5abc3b",
+              "dataKeys": [
+                {
+                  "name": "alcoholDispensado",
+                  "label": "alcoholDispensado",
+                  "type": "timeseries",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9729105261835094
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 60000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10
+          },
+          "title": "Alcohol Dispensado Juanv",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "id": "725db056-a27e-6fd6-0006-a50ee05a5333"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Juan",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "a26c4e37-abbd-dc02-d295-2562e0fd60df": {
+                "sizeX": 12,
+                "sizeY": 5,
+                "row": 2,
+                "col": 0
+              },
+              "2b0ed596-bb05-df9f-6f08-fb6843d7e333": {
+                "sizeX": 12,
+                "sizeY": 5,
+                "row": 2,
+                "col": 12
+              },
+              "56b5af30-5013-b093-055c-b82d8216b3c8": {
+                "sizeX": 12,
+                "sizeY": 2,
+                "row": 0,
+                "col": 12
+              },
+              "12c9e477-b10b-5c48-0d05-c2e0efbaa16b": {
+                "sizeX": 12,
+                "sizeY": 5,
+                "row": 7,
+                "col": 12
+              },
+              "df57fb8d-857a-a365-fb6d-8fa28586a1bc": {
+                "sizeX": 12,
+                "sizeY": 2,
+                "row": 0,
+                "col": 0
+              },
+              "725db056-a27e-6fd6-0006-a50ee05a5333": {
+                "sizeX": 12,
+                "sizeY": 5,
+                "row": 7,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "91cdbb7b-5dcb-6fa3-8c07-74e0befed8bd": {
+        "id": "91cdbb7b-5dcb-6fa3-8c07-74e0befed8bd",
+        "alias": "Juan",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "f6cb2100-8fc8-11ea-a128-4bbb219d4a25"
+          },
+          "resolveMultiple": false
+        }
+      },
+      "61b84620-8889-f9ae-e21e-d644351b0a08": {
+        "id": "61b84620-8889-f9ae-e21e-d644351b0a08",
+        "alias": "Agustin",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "86690120-bbd8-11ea-b4ad-47e5929eed78"
+          },
+          "resolveMultiple": false
+        }
+      },
+      "188159e3-f9ab-1ddf-53fa-d97c82422621": {
+        "id": "188159e3-f9ab-1ddf-53fa-d97c82422621",
+        "alias": "Victoria",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "77cf0f10-bbd8-11ea-b4ad-47e5929eed78"
+          },
+          "resolveMultiple": false
+        }
+      },
+      "7a067223-dc83-7be8-0101-c8d68c5a8f1a": {
+        "id": "7a067223-dc83-7be8-0101-c8d68c5a8f1a",
+        "alias": "Nacho",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "7f1a1fd0-bbd8-11ea-b4ad-47e5929eed78"
+          },
+          "resolveMultiple": false
+        }
+      },
+      "ca9e36e0-b27a-807c-208f-9218ee5abc3b": {
+        "id": "ca9e36e0-b27a-807c-208f-9218ee5abc3b",
+        "alias": "Juanv",
+        "filter": {
+          "type": "singleEntity",
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "6c85cea0-bbd8-11ea-b4ad-47e5929eed78"
+          },
+          "resolveMultiple": false
+        }
+      }
+    },
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "selectedTab": 0,
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 60000
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1588706307737,
+          "endTimeMs": 1588792707737
+        }
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 2500
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    },
+    "filters": {}
+  },
+  "name": "Juan"
+}
